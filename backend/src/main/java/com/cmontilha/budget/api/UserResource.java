@@ -8,9 +8,10 @@ import io.dropwizard.hibernate.UnitOfWork;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.Date;
 import java.util.List;
 
-@Path("/users")
+@Path("/")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserResource {
@@ -24,32 +25,39 @@ public class UserResource {
     }
 
     @POST
+    @Path("users")
     @UnitOfWork
     public User createUser(User user) {
         return userDAO.create(user);
     }
 
-    @POST
-    @Path("/{id}/transactions")
+    @GET
+    @Path("users/{id}")
     @UnitOfWork
-    public Transaction addTransaction(@PathParam("id") Long id, Transaction transaction) {
-        transaction.setUserId(id);
+    public User getUser(@PathParam("id") Long id) {
+        return userDAO.findById(id);
+    }
+
+    @POST
+    @Path("transactions")
+    @UnitOfWork
+    public Transaction createTransaction(Transaction transaction) {
+        if (transaction.getUser() != null) {
+            transaction.setUser(userDAO.findById(transaction.getUser().getId()));
+        }
+        if (transaction.getDate() == null) {
+            transaction.setDate(new Date());
+        }
         return transactionDAO.create(transaction);
     }
 
     @GET
-    @Path("/{id}/transactions")
+    @Path("transactions")
     @UnitOfWork
-    public List<Transaction> getTransactions(@PathParam("id") Long id) {
-        return transactionDAO.findByUserId(id);
-    }
-
-    @GET
-    @Path("/{id}/balance")
-    @UnitOfWork
-    public Double getBalance(@PathParam("id") Long id) {
-        return transactionDAO.findByUserId(id).stream()
-                .mapToDouble(t -> t.getType().equalsIgnoreCase("INCOME") ? t.getAmount() : -t.getAmount())
-                .sum();
+    public List<Transaction> listTransactions(@QueryParam("userId") Long userId) {
+        if (userId == null) {
+            throw new BadRequestException("userId query parameter is required");
+        }
+        return transactionDAO.findByUserId(userId);
     }
 }
