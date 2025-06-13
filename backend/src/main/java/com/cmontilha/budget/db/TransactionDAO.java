@@ -19,4 +19,12 @@ public class TransactionDAO extends AbstractDAO<Transaction> {
         return list(namedQuery("Transaction.findByUserId")
                 .setParameter("userId", userId));
     }
+
+    public Transaction findById(Long id) {
+        return get(id);
+    }
+
+    public void delete(Transaction tx) {
+        currentSession().delete(tx);
+    }
 }

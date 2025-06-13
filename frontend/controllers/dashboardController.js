@@ -26,6 +26,15 @@ app.controller('DashboardController', function($scope, $location, ApiService) {
         });
     };
 
+rkm447-codex/fix-and-finalize-frontend-registration,-login,-and-dashboard
+    $scope.deleteTransaction = function(id) {
+        ApiService.deleteTransaction(id).then(function() {
+            load();
+        });
+    };
+
+
+main
     $scope.logout = function() {
         localStorage.removeItem('currentUser');
         $location.path('/login');

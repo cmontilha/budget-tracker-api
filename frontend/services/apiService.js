@@ -12,6 +12,9 @@ app.factory('ApiService', function($http) {
         },
         listTransactions: function(userId) {
             return $http.get(base + '/transactions', { params: { userId: userId }});
+        },
+        deleteTransaction: function(id) {
+            return $http.delete(base + '/transactions/' + id);
         }
     };
 });

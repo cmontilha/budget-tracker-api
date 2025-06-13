@@ -1,5 +1,6 @@
 package com.cmontilha.budget.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
@@ -27,6 +28,7 @@ public class Transaction implements Serializable {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonProperty
     public Long getId() {
         return id;
     }
@@ -35,6 +37,7 @@ public class Transaction implements Serializable {
         this.id = id;
     }
 
+    @JsonProperty
     public String getDescription() {
         return description;
     }
@@ -43,6 +46,7 @@ public class Transaction implements Serializable {
         this.description = description;
     }
 
+    @JsonProperty
     public Double getAmount() {
         return amount;
     }
@@ -51,6 +55,7 @@ public class Transaction implements Serializable {
         this.amount = amount;
     }
 
+    @JsonProperty
     public Date getDate() {
         return date;
     }
@@ -59,6 +64,7 @@ public class Transaction implements Serializable {
         this.date = date;
     }
 
+    @JsonProperty
     public User getUser() {
         return user;
     }

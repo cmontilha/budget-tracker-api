@@ -73,4 +73,14 @@ public class UserResource {
         }
         return transactionDAO.findByUserId(userId);
     }
+
+    @DELETE
+    @Path("transactions/{id}")
+    @UnitOfWork
+    public void deleteTransaction(@PathParam("id") Long id) {
+        Transaction tx = transactionDAO.findById(id);
+        if (tx != null) {
+            transactionDAO.delete(tx);
+        }
+    }
 }
