@@ -8,6 +8,8 @@ import io.dropwizard.hibernate.UnitOfWork;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.WebApplicationException;
 import java.util.Date;
 import java.util.List;
 
@@ -39,6 +41,17 @@ public class UserResource {
     }
 
     @POST
+    @Path("users/login")
+    @UnitOfWork
+    public User login(User credentials) {
+        User user = userDAO.findByEmailAndPassword(credentials.getEmail(), credentials.getPassword());
+        if (user == null) {
+            throw new WebApplicationException("Invalid credentials", Response.Status.UNAUTHORIZED);
+        }
+        return user;
+    }
+
+    @POST
     @Path("transactions")
     @UnitOfWork
     public Transaction createTransaction(Transaction transaction) {
@@ -59,5 +72,15 @@ public class UserResource {
             throw new BadRequestException("userId query parameter is required");
         }
         return transactionDAO.findByUserId(userId);
+    }
+
+    @DELETE
+    @Path("transactions/{id}")
+    @UnitOfWork
+    public void deleteTransaction(@PathParam("id") Long id) {
+        Transaction tx = transactionDAO.findById(id);
+        if (tx != null) {
+            transactionDAO.delete(tx);
+        }
     }
 }

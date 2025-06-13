@@ -1,5 +1,6 @@
 package com.cmontilha.budget.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class User implements Serializable {
     private String email;
     private String password;
 
+    @JsonProperty
     public Long getId() {
         return id;
     }
@@ -25,6 +27,7 @@ public class User implements Serializable {
         this.id = id;
     }
 
+    @JsonProperty
     public String getName() {
         return name;
     }
@@ -33,6 +36,7 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    @JsonProperty
     public String getEmail() {
         return email;
     }
@@ -41,6 +45,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    @JsonProperty
     public String getPassword() {
         return password;
     }

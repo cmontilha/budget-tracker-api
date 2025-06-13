@@ -1,11 +1,11 @@
 app.controller('LoginController', function($scope, $location, ApiService) {
-    $scope.userId = null;
+    $scope.credentials = {};
     $scope.login = function() {
-        ApiService.getUser($scope.userId).then(function(res) {
+        ApiService.login($scope.credentials).then(function(res) {
             localStorage.setItem('currentUser', JSON.stringify(res.data));
             $location.path('/dashboard');
         }, function() {
-            alert('User not found');
+            alert('Invalid email or password');
         });
     };
 });

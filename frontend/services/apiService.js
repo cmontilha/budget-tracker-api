@@ -4,14 +4,17 @@ app.factory('ApiService', function($http) {
         register: function(user) {
             return $http.post(base + '/users', user);
         },
-        getUser: function(id) {
-            return $http.get(base + '/users/' + id);
+        login: function(credentials) {
+            return $http.post(base + '/users/login', credentials);
         },
         addTransaction: function(tx) {
             return $http.post(base + '/transactions', tx);
         },
         listTransactions: function(userId) {
             return $http.get(base + '/transactions', { params: { userId: userId }});
+        },
+        deleteTransaction: function(id) {
+            return $http.delete(base + '/transactions/' + id);
         }
     };
 });
