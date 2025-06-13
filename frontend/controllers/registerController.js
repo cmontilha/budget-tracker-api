@@ -4,6 +4,8 @@ app.controller('RegisterController', function($scope, $location, ApiService) {
         ApiService.register($scope.user).then(function(res) {
             localStorage.setItem('currentUser', JSON.stringify(res.data));
             $location.path('/dashboard');
+        }, function() {
+            alert('Registration failed');
         });
     };
 });
