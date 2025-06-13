@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="budgetApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css">
+    <style>
+        body { background-color:#f8f9fa; }
+        .container { max-width:600px; margin-top:40px; }
+        .card { padding:20px; margin-bottom:20px; background:#fff; border-radius:4px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div ng-view></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="services/apiService.js"></script>
+<script src="controllers/registerController.js"></script>
+<script src="controllers/loginController.js"></script>
+<script src="controllers/dashboardController.js"></script>
+</body>
+</html>

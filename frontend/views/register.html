@@ -1,0 +1,16 @@
+<div class="card">
+    <h3>Register</h3>
+    <form ng-submit="register()">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" ng-model="user.name" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="user.email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" ng-model="user.password" required>
+        </div>
+        <button class="btn btn-primary btn-block">Register</button>
+    </form>
+    <p class="text-center" style="margin-top:10px;">Already have an account? <a href="#/login">Login</a></p>
+</div>
