@@ -16,4 +16,10 @@ public class UserDAO extends AbstractDAO<User> {
     public User findById(Long id) {
         return get(id);
     }
+
+    public User findByEmailAndPassword(String email, String password) {
+        return uniqueResult(currentSession().createQuery("FROM User u WHERE u.email = :email AND u.password = :password", User.class)
+                .setParameter("email", email)
+                .setParameter("password", password));
+    }
 }
