@@ -1,0 +1,8 @@
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/core/User.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/core/Transaction.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/BudgetTrackerApiConfiguration.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/db/UserDAO.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/health/BudgetHealthCheck.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/BudgetTrackerApiApplication.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/db/TransactionDAO.java
+/Users/cmontilha/Interests/budget-tracker-api/backend/src/main/java/com/cmontilha/budget/api/UserResource.java
