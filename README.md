@@ -4,6 +4,20 @@ A full-stack budgeting application built with a **Java Dropwizard backend** and 
 
 ---
 
+## 📸 Demonstration
+
+- Dashboard: List of transactions added by the user with total calculations per day and month.
+
+<img src="screens/mainpageimage.png" alt="Dashboard" width="600px"/>
+
+<br>
+
+- Postman: Testing the API endpoint for creating a user with name and email.
+
+<img src="screens/postmanimage.png" alt="Postman" width="600px"/>
+
+---
+
 ## Project Progress Overview
 
 | Step                                                                 | Status                                          |
@@ -75,20 +89,6 @@ python3 -m http.server 5500
 ⚠️ UX polish, validations, and error messages still in progress
 
 ✅ Dark mode with Bootstrap + custom styling
-
----
-
-## 📸 Demonstration
-
-- Dashboard: List of transactions added by the user with total calculations per day and month.
-
-<img src="screens/mainpageimage.png" alt="Dashboard" width="600px"/>
-
-<br>
-
-- Postman: Testing the API endpoint for creating a user with name and email.
-
-<img src="screens/postmanimage.png" alt="Postman" width="600px"/>
 
 ---
 
