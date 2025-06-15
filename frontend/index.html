@@ -10,6 +10,7 @@
             color:#fff;
         }
         .container { max-width:700px; margin-top:40px; }
+        .logo { display:block; margin:0 auto 20px; width:400px; }
         .card {
             padding:20px;
             margin-bottom:20px;
@@ -17,12 +18,19 @@
             border-radius:4px;
             box-shadow:0 2px 4px rgba(0,0,0,0.4);
         }
+        .auth-card { max-width:400px; margin:40px auto; }
+        .dashboard-card { margin-top:20px; }
         .table>thead>tr>th, .table>tbody>tr>td { color:#fff; }
         .table-striped>tbody>tr:nth-of-type(odd) { background-color:#1e2531; }
         input.form-control {
             background-color:#0d1117;
             color:#fff;
             border:1px solid #30363d;
+            box-shadow:none;
+        }
+        input.form-control:focus {
+            border-color:#58a6ff;
+            box-shadow:0 0 3px #58a6ff;
         }
         .btn-primary {
             background-color:#238636;
@@ -30,11 +38,18 @@
         }
         .btn-success { background-color:#2da44e; border-color:#2da44e; }
         .btn-danger { background-color:#da3633; border-color:#da3633; }
+        .btn:hover { opacity:0.9; }
         a { color:#58a6ff; }
 
         .total-highlight {
             color: #58a6ff;
             font-weight: bold;
+        }
+        .section-title { font-size:18px; margin-top:20px; }
+        .totals-section { margin-top:20px; border-top:1px solid #30363d; padding-top:10px; }
+        @media (max-width:600px) {
+            .container { margin-top:20px; padding:0 10px; }
+            .auth-card { margin:20px auto; }
         }
     </style>
 </head>

@@ -1,4 +1,5 @@
-<div class="card">
+<img src="../logo.png" alt="Logo" class="logo">
+<div class="card dashboard-card">
     <h3 class="clearfix">
         <span>Your Transactions</span>
         <button class="btn btn-default pull-right" ng-click="logout()">Logout</button>
@@ -25,7 +26,8 @@
         <strong class="total-highlight">Total: {{total | currency}}</strong>
     </div>
 
-    <h4>Monthly Totals</h4>
+    <div class="totals-section">
+        <h4 class="section-title">Monthly Totals</h4>
     <table class="table table-striped">
         <thead><tr><th>Month</th><th class="text-right">Total</th></tr></thead>
         <tbody>
@@ -35,8 +37,7 @@
             </tr>
         </tbody>
     </table>
-
-    <h4>Daily Totals</h4>
+        <h4 class="section-title">Daily Totals</h4>
     <table class="table table-striped">
         <thead><tr><th>Day</th><th class="text-right">Total</th></tr></thead>
         <tbody>
@@ -46,4 +47,5 @@
             </tr>
         </tbody>
     </table>
+    </div>
 </div>

@@ -6,15 +6,21 @@ A full-stack budgeting application built with a **Java Dropwizard backend** and 
 
 ## 📸 Demonstration
 
+- Dashboard: Register and Login page.
+
+<img src="screens/register_login_image.png" alt="Register" width="600px"/>
+
+<br>
+
 - Dashboard: List of transactions added by the user with total calculations per day and month.
 
-<img src="screens/mainpageimage.png" alt="Dashboard" width="600px"/>
+<img src="screens/mainpage_image.png" alt="Dashboard" width="600px"/>
 
 <br>
 
 - Postman: Testing the API endpoint for creating a user with name and email.
 
-<img src="screens/postmanimage.png" alt="Postman" width="600px"/>
+<img src="screens/postman_image.png" alt="Postman" width="600px"/>
 
 ---
 
